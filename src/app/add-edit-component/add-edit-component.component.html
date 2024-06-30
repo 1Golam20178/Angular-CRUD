@@ -1,0 +1,93 @@
+<div mat-dialog-title>Employee From</div>
+<div mat-dialog-content>
+   <form class="example-form">
+     <div class="flex grid-cols-2 gap-5">
+     <div>
+     <mat-form-field appearance="outline">
+       <mat-label> First Name</mat-label>
+       <input matInput type="text" >
+     </mat-form-field>
+     </div>
+     <div>
+       <mat-form-field class="w-full" appearance="outline">
+         <mat-label> Last Name</mat-label>
+         <input matInput type="text" >
+       </mat-form-field>
+     </div>
+     </div>
+
+
+     <div class="flex grid-cols-2 gap-5 w-full">
+       <div>
+         <mat-form-field appearance="outline">
+           <mat-label>Email</mat-label>
+           <input matInput type="email" >
+         </mat-form-field>
+       </div>
+       <div >
+         <mat-form-field appearance="outline">
+           <mat-label>Date of birth</mat-label>
+           <input matInput [matDatepicker]="picker">
+           <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+           <mat-datepicker #picker></mat-datepicker>
+         </mat-form-field>
+
+       </div>
+     </div>
+
+
+     <div>
+       <mat-radio-group aria-label="Select an option">
+         <mat-label><b> Gender</b> </mat-label>
+         <mat-radio-button value="male">Male</mat-radio-button>
+         <mat-radio-button value="female">Female</mat-radio-button>
+       </mat-radio-group>
+
+     </div>
+
+<div class="flex grid-cols-2 gap-5">
+     <div>
+       <mat-form-field appearance="outline">
+         <mat-label>Select Education</mat-label>
+         <mat-select>
+            <mat-option *ngFor="let edu of education"[value]="edu" >{{edu}}</mat-option>
+
+         </mat-select>
+       </mat-form-field>
+     </div>
+     <div>
+       <mat-form-field appearance="outline">
+         <mat-label> Company</mat-label>
+         <input matInput type="text" >
+       </mat-form-field>
+     </div>
+</div>
+
+
+
+     <div class="flex grid-cols-2 gap-5">
+       <div>
+         <mat-form-field appearance="outline">
+           <mat-label>Experience</mat-label>
+           <input matInput type="text" >
+         </mat-form-field>
+       </div>
+       <div>
+         <mat-form-field class="w-full" appearance="outline">
+           <mat-label>Package</mat-label>
+           <input matInput type="text" >
+         </mat-form-field>
+       </div>
+     </div>
+
+   </form>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn"> Cancel</button>
+  <button mat-raised-button color="primary">Save</button>
+
+
+  </div>
+
+
